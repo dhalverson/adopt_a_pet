@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true }
   validates :sex, presence: true
   validates :type, presence: true
-  validates :adopted, presence: true
+  validates :adopted, inclusion: { in: [ true, false ] }
   validates :description, presence: true
   # validates :images, presence: true
 

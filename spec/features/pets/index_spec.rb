@@ -4,7 +4,7 @@ RSpec.describe 'Pet' do
   it 'as a visitor, I can see all exisiting pets' do
     pets = create_list(:pet, 3)
 
-    visit('/pets')
+    visit(pets_path)
 
     expect(page).to have_content('All Pets')
     pets.each do |pet|
