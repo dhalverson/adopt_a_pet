@@ -8,9 +8,10 @@ RSpec.describe Pet, type: :model do
     it { should validate_presence_of :type }
     it { should validate_presence_of :adopted }
     it { should validate_presence_of :description }
+    # it { should validate_presence_of :images }
   end
 
   describe 'relationships' do
-    it { should belong_to :shelters }
+    it { should belong_to :shelter }
   end
 end
