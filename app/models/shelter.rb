@@ -4,7 +4,7 @@ class Shelter < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :zip, presence: true, length: { is: 5 }
-  validates :open, presence: true
+  validates :open, :inclusion => {:in => [true, false]}
 
   has_many :pets
 end
