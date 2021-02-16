@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bcrypt'
 gem 'figaro'
 gem 'faraday'
+gem 'active_storage-postgresql'
 
 group :development, :test do
   gem 'pry'
