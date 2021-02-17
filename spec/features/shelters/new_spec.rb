@@ -9,5 +9,12 @@ RSpec.describe 'Shelter' do
     click_link "New Shelter"
 
     expect(current_path).to eq('/shelters/new')
+    expect(page).to have_content("Create New Shelter")
+    expect(page).to have_content("Name")
+    expect(page).to have_content("Address")
+    expect(page).to have_content("City")
+    expect(page).to have_content("State")
+    expect(page).to have_content("Zip")
+    expect(page).to have_content("Open")
   end
 end
