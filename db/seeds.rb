@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Shelter.destroy_all
 Pet.destroy_all
 
@@ -13,26 +5,44 @@ ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
-5.times do
-  Shelter.create(
-    name: Faker::Company.name + " Shelter",
-    address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    state: Faker::Address.state,
-    zip: Faker::Number.number(digits: 5).to_s,
-    open: Faker::Boolean.boolean(true_ratio: 0.8)
-  )
-end
+denver_animal_shelter = Shelter.create!(
+  name: 'Denver Animal Shelter',
+  address: '1241 Bayaud Ave',
+  city: 'Denver',
+  state: 'CO',
+  zip: '80223',
+  open: true
+)
 
-20.times do
-  Pet.create(
+dumb_friends_league = Shelter.create!(
+  name: 'Dumb Friends League',
+  address: '2080 S Quebec Street',
+  city: 'Denver',
+  state: 'CO',
+  zip: '80231',
+  open: true
+)
+5.times do
+  dumb_friends_league.pets.create!(
     name: Faker::Creature::Dog.name,
     age: Faker::Number.within(range: 0..25),
     sex: Faker::Creature::Dog.gender,
-    type: Faker::Creature::Dog.breed,
+    breed: Faker::Creature::Dog.breed,
     adopted: Faker::Boolean.boolean(true_ratio: 0.8),
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph,
+    species: ['cat', 'dog'].sample
   )
 end
 
+5.times do
+  denver_animal_shelter.pets.create!(
+    name: Faker::Creature::Dog.name,
+    age: Faker::Number.within(range: 0..25),
+    sex: Faker::Creature::Dog.gender,
+    breed: Faker::Creature::Dog.breed,
+    adopted: Faker::Boolean.boolean(true_ratio: 0.8),
+    description: Faker::Lorem.paragraph,
+    species: ['cat', 'dog'].sample
+  )
+end
 print 'Database seeding successful!'
