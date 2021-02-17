@@ -11,9 +11,10 @@ RSpec.describe 'Pet' do
       expect(page).to have_content(pet.name)
       expect(page).to have_content(pet.age)
       expect(page).to have_content(pet.sex)
-      expect(page).to have_content(pet.type)
+      expect(page).to have_content(pet.breed)
       expect(page).to have_content(pet.adopted)
       expect(page).to have_content(pet.description)
+      expect(page).to have_content(pet.species)
     end
   end
 end
