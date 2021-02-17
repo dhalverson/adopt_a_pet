@@ -35,4 +35,21 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("80209")
     expect(page).to have_content(true)
   end
+
+  it 'displays a flash message if a field is missing' do
+
+    visit '/shelters/new'
+
+    fill_in :name, with: "Corgis"
+    fill_in :city, with: "Denver"
+    fill_in :state, with: "CO"
+    fill_in :zip, with: "80209"
+    fill_in :open, with: true
+
+    click_on "Create Shelter"
+
+    expect(current_path).to eq('/shelters/new')
+    expect(Shelter.count).to eq(0)
+    #expect(page).to have_content("address: [\"cant be blank\"]")
+  end
 end
