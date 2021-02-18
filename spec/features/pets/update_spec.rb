@@ -26,6 +26,14 @@ RSpec.describe 'as a visitor' do
 
     click_button('Update')
     expect(current_path).to eq(pet_path(@pet_1))
-
+    within('div#name') do
+      expect(page).to have_content('New Name')
+    end
+    expect(page).to have_content(100)
+    expect(page).to have_content('Male')
+    expect(page).to have_content('Corgi')
+    expect(page).to have_content('false')
+    expect(page).to have_content('New description text goes here')
+    expect(page).to have_content('Dog')
   end
 end
