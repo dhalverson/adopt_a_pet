@@ -1,0 +1,14 @@
+<h1>All Pets</h1>
+<ol>
+<% @pets.each do |pet| %>
+  <li>
+    <div id="name"><h2>Name: <%= pet.name %></h2></div>
+  </li>
+    <div id="species"><p>Type: <%= pet.species %></p></div>
+    <div id="breed"><p>Breed: <%= pet.breed %></p></div>
+    <div id="sex"><p>Sex: <%= pet.sex %></p></div>
+    <div id="age"><p>Age: <%= pet.age %> years</p></div>
+    <div id="description"><p>Description: <%= pet.description %></p></div>
+    <div id="adopted"><p>Adopted: <%= pet.adopted %></p></div>
+<% end %>
+</ol>
