@@ -11,6 +11,17 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
   end
 
+  def update
+    @pet = Pet.find(params[:id])
+    if @pet.update(pet_params)
+      flash[:success] = "#{@pet.name} updated!"
+      redirect_to pet_path(@pet)
+    else
+      flash[:error] = @pet.errors.full_messages
+      render action: :edit
+    end
+  end
+
 private
 
   def pet_params

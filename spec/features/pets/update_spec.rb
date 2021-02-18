@@ -14,18 +14,18 @@ RSpec.describe 'as a visitor' do
     visit(pet_path(@pet_1))
     
     click_link('Edit')
-    expect(current_path).to eq(edit_pet(@pet_1))
+    expect(current_path).to eq(edit_pet_path(@pet_1))
 
     fill_in 'Name', with: 'New Name'
     fill_in 'Age', with: 100
-    fill_in 'sex', with: 'Male'
-    fill_in 'breed', with: 'Corgi'
-    fill_in 'adopted', with: false
-    fill_in 'description', with: 'New description text goes here'
-    fill_in 'species', with: 'dog'
+    select 'Male', :from => 'Sex'
+    fill_in 'Breed', with: 'Corgi'
+    fill_in 'Adopted', with: false
+    fill_in 'Description', with: 'New description text goes here'
+    select 'Dog', :from => 'Species'
 
     click_button('Update')
-    expect(current_path).to_eq(pet_path(@pet_1))
+    expect(current_path).to eq(pet_path(@pet_1))
 
   end
 end

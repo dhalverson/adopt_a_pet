@@ -11,7 +11,7 @@
 
   <div class="form_sex">
     <%= f.label :sex %>
-    <%= f.text_field :sex %>
+    <%= f.select :sex, ['Male', 'Female'] %>
   </div>
 
   <div class="form_breed">
@@ -31,8 +31,8 @@
 
   <div class="form_species">
     <%= f.label :species %>
-    <%= f.text_field :species %>
+    <%= f.select :species, ['Cat', 'Dog', 'Other'] %>
   </div>
 
-  <% submit %>
+  <%= f.submit 'Update' %>
 <% end %>
