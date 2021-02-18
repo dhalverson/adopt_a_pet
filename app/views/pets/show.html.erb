@@ -5,3 +5,5 @@
 <div id="age"><p>Age: <%= @pet.age %> years</p></div>
 <div id="description"><p>Description: <%= @pet.description %></p></div>
 <div id="adopted"><p>Adopted: <%= @pet.adopted %></p></div>
+
+<%= link_to 'Edit', "/pets/#{@pet.id}/edit" %>
