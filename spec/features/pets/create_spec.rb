@@ -11,6 +11,11 @@ RSpec.describe 'as a visitor' do
     expect(page).to have_link('Create Pet')
   end
 
-  it ''
+  it 'From a shelters pets page, I can click create a new pet, fill out the attributes, and am redirected to the shelters pets page' do
+    visit("/shelters/#{@shelter_1.id}/pets")
+
+    click_link('Create Pet')
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+  end
 end
  
