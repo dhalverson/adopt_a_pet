@@ -50,6 +50,6 @@ RSpec.describe 'Shelter' do
 
     expect(current_path).to eq('/shelters/new')
     expect(Shelter.count).to eq(0)
-    #expect(page).to have_content("address: [\"cant be blank\"]")
+    expect(page).to have_content("Address can't be blank")
   end
 end

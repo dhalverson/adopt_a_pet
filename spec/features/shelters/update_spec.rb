@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Shelter' do
   before :each do
-  @shelter1 = Shelter.create!(name: "Dan's Adoption",
-                              address: "4444 Dog St.",
-                              city: "Denver",
-                              state: "CO",
-                              zip: "80210",
-                              open: true)
+    @shelter1 = Shelter.create!(name: "Dan's Adoption",
+                                address: "4444 Dog St.",
+                                city: "Denver",
+                                state: "CO",
+                                zip: "80210",
+                                open: true)
   end
 
   it 'as a visitor, I can update an existing shelter' do
@@ -20,9 +20,9 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("Zip")
     expect(page).to have_content("Open")
 
-    fill_in :name, with: "Bob's Adoption"
-
-    click_on "Update Shelter"
+    fill_in "Name", with: "Bob's Adoption"
+  
+    click_on('Update Shelter')
 
     expect(current_path).to eq("/shelters/#{@shelter1.id}")
     expect(page).to have_content("Bob's Adoption")
