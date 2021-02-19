@@ -36,4 +36,23 @@ RSpec.describe 'as a visitor' do
     expect(page).to have_content('New description text goes here')
     expect(page).to have_content('Dog')
   end
+
+  it 'returns an error if all fields are not filled out' do
+    visit(pet_path(@pet_1))
+    
+    click_link('Edit')
+
+    fill_in 'Name', with: ''
+    fill_in 'Age', with: 100
+    select 'Male', :from => 'Sex'
+    fill_in 'Breed', with: 'Corgi'
+    fill_in 'Adopted', with: false
+    fill_in 'Description', with: 'New description text goes here'
+    select 'Dog', :from => 'Species'
+
+    click_button('Update')
+
+    expect(current_path).to eq(pet_path(@pet_1))
+    expect(page).to have_content('Name can\'t be blank')
+  end
 end
