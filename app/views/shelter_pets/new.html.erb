@@ -1,0 +1,38 @@
+<%= form_with model: @pet, local: true do |f| %>
+  <div class="form_name">
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+  </div>
+  
+  <div class="form_age">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="form_sex">
+    <%= f.label :sex %>
+    <%= f.select :sex, ['Male', 'Female'] %>
+  </div>
+
+  <div class="form_breed">
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="form_adopted">
+    <%= f.label :adopted %>
+    <%= f.text_field :adopted %>
+  </div>
+
+  <div class="form_description">
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  </div>
+
+  <div class="form_species">
+    <%= f.label :species %>
+    <%= f.select :species, ['Cat', 'Dog', 'Other'], :include_blank => true %>
+  </div>
+
+  <%= f.submit 'Create' %>
+<% end %>
