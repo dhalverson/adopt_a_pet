@@ -4,7 +4,7 @@ RSpec.describe 'Shelter' do
   it 'as a visitor, I can see all existing shelters' do
     shelters = create_list(:shelter, 2)
 
-    visit '/shelters'
+    visit(shelters_path)
 
     expect(page).to have_content("All Shelters")
     shelters.each do |shelter|

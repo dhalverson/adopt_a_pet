@@ -11,7 +11,8 @@ RSpec.describe 'Shelter' do
   end
 
   it 'as a visitor, I can update an existing shelter' do
-    visit "/shelters/#{@shelter1.id}/edit"
+
+    visit(edit_shelter_path(@shelter1.id))
 
     expect(page).to have_content("Name")
     expect(page).to have_content("Address")
@@ -24,7 +25,7 @@ RSpec.describe 'Shelter' do
 
     click_button('Update')
 
-    expect(current_path).to eq("/shelters/#{@shelter1.id}")
+    expect(current_path).to eq(shelter_path(@shelter1.id))
     expect(page).to have_content("Bob's Adoption")
   end
 end
