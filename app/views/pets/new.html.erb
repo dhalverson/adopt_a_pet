@@ -1,4 +1,4 @@
-<%= form_with model: @pet, local: true do |f| %>
+<%= form_with model: @shelter.pets, local: true do |f| %>
   <div class="form_name">
     <%= f.label :name %>
     <%= f.text_field :name, :required => true %>

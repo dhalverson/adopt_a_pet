@@ -16,6 +16,19 @@ RSpec.describe 'as a visitor' do
 
     click_link('Create Pet')
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+
+    fill_in 'Name', with: 'New Name'
+    fill_in 'Age', with: 99
+    select 'Male', :from => 'Sex'
+    fill_in 'Breed', with: 'New Breed'
+    fill_in 'Adopted', with: 'false'
+    fill_in 'Description', with: 'New Description'
+    select 'Dog', :from => 'Species'
+
+    click_button('Create')
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+
+    expect(page).to have_content('New Name')
   end
 end
  
