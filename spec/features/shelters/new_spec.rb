@@ -22,9 +22,9 @@ RSpec.describe 'Shelter' do
     fill_in :city, with: "Denver"
     fill_in :state, with: "CO"
     fill_in :zip, with: "80209"
-    fill_in :open, with: true
+    select 'True', :from => 'Open'
 
-    click_on "Create Shelter"
+    click_on "Create"
 
     expect(current_path).to eq('/shelters')
     expect(Shelter.count).to eq(1)
@@ -44,9 +44,9 @@ RSpec.describe 'Shelter' do
     fill_in :city, with: "Denver"
     fill_in :state, with: "CO"
     fill_in :zip, with: "80209"
-    fill_in :open, with: true
+    select 'True', :from => 'Open'
 
-    click_on "Create Shelter"
+    click_on "Create"
 
     expect(current_path).to eq('/shelters/new')
     expect(Shelter.count).to eq(0)

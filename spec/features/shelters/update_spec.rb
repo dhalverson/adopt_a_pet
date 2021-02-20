@@ -21,8 +21,8 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("Open")
 
     fill_in "Name", with: "Bob's Adoption"
-  
-    click_on('Update Shelter')
+
+    click_button('Update')
 
     expect(current_path).to eq("/shelters/#{@shelter1.id}")
     expect(page).to have_content("Bob's Adoption")

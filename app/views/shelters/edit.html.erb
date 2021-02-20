@@ -26,8 +26,8 @@
 
     <div class="form_open">
       <%= f.label :open %>
-      <%= f.text_field :open %><br>
+      <%= f.select :open, ['True', 'False'] %><br>
     </div>
 
-    <%= f.submit %>
+    <%= f.submit 'Update' %>
   <% end %>
