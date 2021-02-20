@@ -16,4 +16,14 @@ RSpec.describe 'Shelter' do
       expect(page).to have_content(shelter.open)
     end
   end
+
+  it 'displays a link to create a new shelter' do
+
+    visit(shelters_path)
+
+    expect(page).to have_content("New Shelter")
+    click_link 'New Shelter'
+
+    expect(current_path).to eq(new_shelter_path)
+  end
 end
