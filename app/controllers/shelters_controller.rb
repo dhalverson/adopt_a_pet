@@ -6,7 +6,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @weather = WeatherFacade.get_weather_forecast(@shelter.zipcode)
+    @weather = WeatherFacade.get_weather_forecast(@shelter.zip)
   end
 
   def new
