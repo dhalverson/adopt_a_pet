@@ -1,0 +1,4 @@
+class WeatherDetails
+
+
+end
