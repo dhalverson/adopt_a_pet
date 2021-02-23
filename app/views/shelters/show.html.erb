@@ -15,5 +15,5 @@
 
 <div id="shelter_weather">
   <p>Weather Conditions: <%= @weather.temp_f %>&#8457; and <%= @weather.text %></p>
-  <%= image_tag "#{@weather.icon}" %>
+  <%= image_tag "#{@weather.icon}", alt: 'Shelter Weather' %>
 </div>
