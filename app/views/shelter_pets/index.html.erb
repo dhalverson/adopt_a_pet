@@ -12,5 +12,6 @@
     <div id="adopted"><p>Adopted: <%= pet.adopted %></p></div>
 <% end %>
 </ol>
-<%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>
-
+<div id="create-pet">
+  <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>
+</div>

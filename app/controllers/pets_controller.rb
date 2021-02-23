@@ -27,8 +27,8 @@ class PetsController < ApplicationController
   end
 
   def create
-
-    @pet = Pet.new(pet_params)
+    @shelter = Shelter.find(params[:id])
+    @pet = @shelter.pets.create!(pet_params)
     if @pet.save
       flash[:success] = "#{@pet.name} created!"
       redirect_to "/shelters/#{@pet.shelter.id}/pets"
@@ -47,6 +47,6 @@ class PetsController < ApplicationController
 private
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :sex, :breed, :adopted, :description, :species, :shelter_id)
+    params.require(:pet).permit(:name, :age, :sex, :breed, :adopted, :description, :species, :id)
   end
 end
