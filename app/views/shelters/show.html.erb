@@ -13,3 +13,7 @@
   <h4><%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", :method => :delete %></h4>
 </div>
 
+<div id="shelter_weather">
+  <p>Weather Conditions: <%= @weather.temp_f %>&#8457; and <%= @weather.text %></p>
+  <%= image_tag "#{@weather.icon}" %>
+</div>
