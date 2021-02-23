@@ -6,8 +6,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @weather = WeatherFacade.
-    require 'pry'; binding.pry
+    @weather = WeatherFacade.get_weather_forecast(@shelter.zipcode)
   end
 
   def new

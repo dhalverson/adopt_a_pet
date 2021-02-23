@@ -5,8 +5,7 @@ class WeatherService
       req.params['key'] = ENV['WEATHER_API_KEY']
       req.params['q'] = zipcode
     end
-    require 'pry'; binding.pry
-    result  = JSON.parse(response.body, symbolize_names: true)
+    result = JSON.parse(response.body, symbolize_names: true)
   end
 end
 
