@@ -17,13 +17,13 @@ RSpec.describe 'Shelter' do
   end
 
   it 'as a visitor, I can delete an existing shelter' do
-    visit "/shelters/#{@shelter1.id}"
+    visit(shelter_path(@shelter1.id))
 
     expect(page).to have_content("Delete Shelter")
 
     click_on "Delete Shelter"
 
-    expect(current_path).to eq("/shelters")
+    expect(current_path).to eq(shelters_path)
     expect(Shelter.count).to eq(1)
     expect(page).to have_content(@shelter2.name)
     expect(page).to_not have_content(@shelter1.name)
