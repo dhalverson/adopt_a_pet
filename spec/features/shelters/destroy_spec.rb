@@ -7,13 +7,13 @@ RSpec.describe 'Shelter' do
                                 city: "Denver",
                                 state: "CO",
                                 zip: "80210",
-                                open: true)
+                                hours_of_operation: '9:00am - 5:00pm')
     @shelter2 = Shelter.create!(name: "I Don't Like Cats",
                                 address: "4200 Dogzzz St.",
                                 city: "Spokane",
                                 state: "WA",
                                 zip: "99208",
-                                open: true)
+                                hours_of_operation: '9:00am - 5:00pm')
   end
 
   it 'as a visitor, I can delete an existing shelter' do

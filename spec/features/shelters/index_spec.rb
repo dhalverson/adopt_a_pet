@@ -13,7 +13,7 @@ RSpec.describe 'Shelter' do
       expect(page).to have_content(shelter.city)
       expect(page).to have_content(shelter.state)
       expect(page).to have_content(shelter.zip)
-      expect(page).to have_content(shelter.open)
+      expect(page).to have_content(shelter.hours_of_operation)
     end
   end
 
