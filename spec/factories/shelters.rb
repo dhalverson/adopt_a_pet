@@ -5,6 +5,6 @@ FactoryBot.define do
     city { Faker::Address.city }
     state { Faker::Address.state }
     zip { Faker::Number.number(digits: 5).to_s }
-    open { Faker::Boolean.boolean(true_ratio: 0.8) }
+    hours_of_operation { "9:00am - 5:00pm" }
   end
 end

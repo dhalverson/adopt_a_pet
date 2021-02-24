@@ -11,7 +11,7 @@ denver_animal_shelter = Shelter.create!(
   city: 'Denver',
   state: 'CO',
   zip: '80223',
-  open: true
+  hours_of_operation: '9:00am - 5:00pm'
 )
 
 dumb_friends_league = Shelter.create!(
@@ -20,7 +20,7 @@ dumb_friends_league = Shelter.create!(
   city: 'Denver',
   state: 'CO',
   zip: '80231',
-  open: true
+  hours_of_operation: '9:00am - 5:00pm'
 )
 5.times do
   dumb_friends_league.pets.create!(

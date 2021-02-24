@@ -15,15 +15,14 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("City")
     expect(page).to have_content("State")
     expect(page).to have_content("Zip")
-    expect(page).to have_content("Open")
+    expect(page).to have_content("Hours of operation")
 
     fill_in 'Name', with: "Corgi Shelter"
     fill_in 'Address', with: "2468 Corgi Drive"
     fill_in 'City', with: "Denver"
     fill_in 'State', with: "CO"
     fill_in 'Zip', with: "80209"
-    select 'True', :from => 'Open'
-
+    fill_in 'Hours of operation', with: '9:00am - 5:00pm'
     click_on "Create"
 
     expect(current_path).to eq(shelters_path)
@@ -33,7 +32,7 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("Denver")
     expect(page).to have_content("CO")
     expect(page).to have_content("80209")
-    expect(page).to have_content(true)
+    expect(page).to have_content('9:00am - 5:00pm')
   end
 
   it 'displays a flash message if a field is missing' do
@@ -44,7 +43,7 @@ RSpec.describe 'Shelter' do
     fill_in 'City', with: "Denver"
     fill_in 'State', with: "CO"
     fill_in 'Zip', with: "80209"
-    select 'True', :from => 'Open'
+    fill_in 'Hours of operation', with: '9:00am - 5:00pm'
 
     click_on "Create"
 
