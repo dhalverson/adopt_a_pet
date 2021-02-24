@@ -7,7 +7,6 @@ RSpec.describe 'Shelter' do
   end
 
   it 'as a visitor, I can see find a shelter by id' do
-
     visit(shelter_path(@shelter1.id))
 
     expect(page).to have_content(@shelter1.name)
@@ -25,10 +24,19 @@ RSpec.describe 'Shelter' do
   end
 
   it 'displays a link to update and delete an existing shelter' do
-
     visit(shelter_path(@shelter1.id))
 
     expect(page).to have_content("Update Shelter")
     expect(page).to have_content("Delete Shelter")
+  end
+
+  xit 'displays the current temperature for a shelters zipcode', :vcr do
+    visit(shelter_path(@shelter1.id))  
+    
+    within '#shelter_weather' do
+      expect(page).to have_content(100)
+      expect(page).to have_content('string')
+      expect(page).to have_content('string')
+    end
   end
 end

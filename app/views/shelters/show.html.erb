@@ -5,3 +5,8 @@
 
 <%= link_to "Update Shelter", "/shelters/#{@shelter.id}", :method => :patch %>
 <%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", :method => :delete %>
+
+<div id="shelter_weather">
+  <p>Weather Conditions: <%= @weather.temp_f %>&#8457; and <%= @weather.text %></p>
+  <%= image_tag "#{@weather.icon}", alt: 'Shelter Weather' %>
+</div>

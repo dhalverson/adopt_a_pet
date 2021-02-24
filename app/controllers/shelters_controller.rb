@@ -6,6 +6,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @weather = WeatherFacade.get_weather_forecast(@shelter.zip)
   end
 
   def new
@@ -44,5 +45,4 @@ class SheltersController < ApplicationController
   def shelter_params
     params.require(:shelter).permit(:name, :address, :city, :state, :zip, :hours_of_operation)
   end
-
 end
