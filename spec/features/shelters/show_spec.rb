@@ -10,7 +10,6 @@ RSpec.describe 'Shelter' do
 
     visit(shelter_path(@shelter1.id))
 
-    expect(page).to have_content("Shelter Details")
     expect(page).to have_content(@shelter1.name)
     expect(page).to have_content(@shelter1.address)
     expect(page).to have_content(@shelter1.city)
