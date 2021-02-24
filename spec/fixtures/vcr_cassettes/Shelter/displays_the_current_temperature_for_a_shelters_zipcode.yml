@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weatherapi.com/v1/current.json?key=WEATHER_API_KEY&q=59206
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Tue, 23 Feb 2021 20:57:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - BunnyCDN-DEN1-616
+      Cdn-Pullzone:
+      - '93447'
+      Cdn-Uid:
+      - 8fa3a04a-75d9-4707-8056-b7b33c8ac7fe
+      Cdn-Requestcountrycode:
+      - US
+      Cdn-Edgestorageid:
+      - '616'
+      X-Stackifyid:
+      - V2|7ec5ea9c-ff58-4308-841a-ad308a62663e|C0|CD0
+      Cdn-Cachedat:
+      - '2021-02-23 13:57:15'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '400'
+      Cache-Control:
+      - public, max-age=5
+      Cdn-Requestid:
+      - '048dc489cf69972c4011742ac2156542'
+      Cdn-Cache:
+      - MISS
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":1006,"message":"No matching location found."}}'
+  recorded_at: Tue, 23 Feb 2021 20:57:15 GMT
+recorded_with: VCR 6.0.0
