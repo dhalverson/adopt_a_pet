@@ -1,24 +1,34 @@
 <h1>Create New Shelter</h1>
-  <div class="form">
-    <%= form_tag ('/shelters') do %>
-      <%= label_tag :name %>
-      <%= text_field_tag :name %><br>
-      <br>
-      <%= label_tag :address %>
-      <%= text_field_tag :address %><br>
-      <br>
-      <%= label_tag :city %>
-      <%= text_field_tag :city %><br>
-      <br>
-      <%= label_tag :state %>
-      <%= text_field_tag :state %><br>
-      <br>
-      <%= label_tag :zip %>
-      <%= text_field_tag :zip %><br>
-      <br>
-      <%= label_tag :open %>
-      <%= text_field_tag :open %><br>
-      <br>
-      <%= submit_tag "Create Shelter" %><br>
+    <%= form_with model: Shelter.new, local: true do |f| %>
+      <div class="form_name">
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+      </div>
+
+      <div class="form_address">
+        <%= f.label :address %>
+        <%= f.text_field :address %><br>
+      </div>
+
+      <div class="form_city">
+        <%= f.label :city %>
+        <%= f.text_field :city %><br>
+      </div>
+
+      <div class="form_state">
+        <%= f.label :state %>
+        <%= f.text_field :state %><br>
+      </div>
+
+      <div class="form_zip">
+        <%= f.label :zip %>
+        <%= f.text_field :zip %><br>
+      </div>
+
+      <div class="form_open">
+        <%= f.label :open %>
+        <%= f.select :open, ['True', 'False'] %><br>
+      </div>
+
+      <%= f.submit 'Create' %><br>
     <% end %>
-  </div>
