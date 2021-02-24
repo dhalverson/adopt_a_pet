@@ -1,14 +1,16 @@
 <h1>All Shelters</h1>
+<ol>
 <% @shelters.each do |shelter| %>
   <li>
     <div id="name"><h2><%= shelter.name %></h2>
   </li>
-    <h2>Name:<%= shelter.name %></h2>
-    <h2>Address:<%= shelter.address %></h2>
-    <h2>City:<%= shelter.city %></h2>
-    <h2>State:<%= shelter.state %></h2>
-    <h2>Zip:<%= shelter.zip %></h2>
-    <h2>Open:<%= shelter.open %></h2>
+    <h2>Name: <%= shelter.name %></h2>
+    <h2>Address: <%= shelter.address %></h2>
+    <h2>City: <%= shelter.city %></h2>
+    <h2>State: <%= shelter.state %></h2>
+    <h2>Zip: <%= shelter.zip %></h2>
+    <h2>Open: <%= shelter.open %></h2>
 <% end %>
+</ol>
 <br>
 <a href="/shelters/new">New Shelter</a>
