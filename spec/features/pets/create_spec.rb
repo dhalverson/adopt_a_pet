@@ -31,4 +31,3 @@ RSpec.describe 'as a visitor' do
     expect(page).to have_content('New Name')
   end
 end
- 

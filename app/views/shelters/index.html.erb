@@ -2,15 +2,12 @@
 <ol>
 <% @shelters.each do |shelter| %>
   <li>
-    <div id="name"><h2><%= shelter.name %></h2>
+    <div id="name"><h2><%= shelter.name %></h2></div>
   </li>
-    <h2>Name: <%= shelter.name %></h2>
-    <h2>Address: <%= shelter.address %></h2>
-    <h2>City: <%= shelter.city %></h2>
-    <h2>State: <%= shelter.state %></h2>
-    <h2>Zip: <%= shelter.zip %></h2>
-    <h2>Open: <%= shelter.open %></h2>
+    <div id="address"><p>Address: <%= shelter.address %></p></div>
+    <p><%= shelter.city %>, <%= shelter.state %> <%= shelter.zip %></p>
+    <div id="hours_of_operation"><p>Hours of operation: <%= shelter.hours_of_operation %></p></div>
 <% end %>
 </ol>
 <br>
-<a href="/shelters/new">New Shelter</a>
+<h4><%= link_to "New Shelter", "/shelters/new" %></h4>

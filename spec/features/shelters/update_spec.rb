@@ -7,7 +7,7 @@ RSpec.describe 'Shelter' do
                                 city: "Denver",
                                 state: "CO",
                                 zip: "80210",
-                                open: true)
+                                hours_of_operation: '9:00am - 5:00pm')
   end
 
   it 'as a visitor, I can update an existing shelter' do
@@ -19,7 +19,7 @@ RSpec.describe 'Shelter' do
     expect(page).to have_content("City")
     expect(page).to have_content("State")
     expect(page).to have_content("Zip")
-    expect(page).to have_content("Open")
+    expect(page).to have_content("Hours of operation")
 
     fill_in "Name", with: "Bob's Adoption"
 

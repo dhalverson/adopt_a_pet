@@ -1,17 +1,10 @@
-<h1>Shelter Details</h1>
+<div id="name"><h1><%= @shelter.name %></h1></div>
+<div id="address"><p>Address: <%= @shelter.address %></p></div>
+<p><%= @shelter.city %>, <%= @shelter.state %> <%= @shelter.zip %></p>
+<div id="hours_of_operation"><p>Hours of operation: <%= @shelter.hours_of_operation %></p></div>
 
-<div id="shelterinfo">
-  <h2>Name: <%= @shelter.name %></h2>
-  <h3>Address: <%= @shelter.address %></h3>
-  <h3>City: <%= @shelter.city %></h3>
-  <h3>State: <%= @shelter.state %></h3>
-  <h3>Zip: <%= @shelter.zip %></h3>
-  <h3>Open: <%= @shelter.open %></h3>
-  <br>
-  <h4><%= link_to "Update Shelter", "/shelters/#{@shelter.id}", :method => :patch %></h4>
-  <br>
-  <h4><%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", :method => :delete %></h4>
-</div>
+<%= link_to "Update Shelter", "/shelters/#{@shelter.id}", :method => :patch %>
+<%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", :method => :delete %>
 
 <div id="shelter_weather">
   <p>Weather Conditions: <%= @weather.temp_f %>&#8457; and <%= @weather.text %></p>
