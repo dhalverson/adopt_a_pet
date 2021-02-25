@@ -1,34 +1,39 @@
 <h1>Create New Shelter</h1>
-    <%= form_with model: Shelter.new, local: true do |f| %>
-      <div class="form_name">
-        <%= f.label :name %>
-        <%= f.text_field :name %><br>
-      </div>
+  <%= form_with model: Shelter.new, local: true do |f| %>
+    <div class="form_name">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+    </div>
 
-      <div class="form_address">
-        <%= f.label :address %>
-        <%= f.text_field :address %><br>
-      </div>
+    <div class="image">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
 
-      <div class="form_city">
-        <%= f.label :city %>
-        <%= f.text_field :city %><br>
-      </div>
+    <div class="form_address">
+      <%= f.label :address %>
+      <%= f.text_field :address %><br>
+    </div>
 
-      <div class="form_state">
-        <%= f.label :state %>
-        <%= f.text_field :state %><br>
-      </div>
+    <div class="form_city">
+      <%= f.label :city %>
+      <%= f.text_field :city %><br>
+    </div>
 
-      <div class="form_zip">
-        <%= f.label :zip %>
-        <%= f.text_field :zip %><br>
-      </div>
+    <div class="form_state">
+      <%= f.label :state %>
+      <%= f.text_field :state %><br>
+    </div>
 
-      <div class="form_hours_of_operation">
-        <%= f.label :hours_of_operation %>
-        <%= f.text_field :hours_of_operation %><br>
-      </div>
+    <div class="form_zip">
+      <%= f.label :zip %>
+      <%= f.text_field :zip %><br>
+    </div>
 
-      <%= f.submit 'Create' %><br>
-    <% end %>
+    <div class="form_hours_of_operation">
+      <%= f.label :hours_of_operation %>
+      <%= f.text_field :hours_of_operation %><br>
+    </div>
+
+    <%= f.submit 'Create' %><br>
+  <% end %>
