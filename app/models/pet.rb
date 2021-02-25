@@ -1,4 +1,6 @@
 class Pet < ApplicationRecord
+  has_one_attached :image
+
   validates :name, presence: true
   validates :age, presence: true, numericality: { only_integer: true }
   validates :sex, presence: true
