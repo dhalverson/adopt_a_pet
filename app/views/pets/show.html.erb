@@ -1,4 +1,5 @@
 <div id="name"><h1><%= @pet.name %></h1></div>
+<%= image_tag(@pet.image, style:'width:30%', alt: 'Pet Picture') if @pet.image.attached? %>
 <div id="species"><p>Type: <%= @pet.species %></p></div>
 <div id="breed"><p>Breed: <%= @pet.breed %></p></div>
 <div id="sex"><p>Sex: <%= @pet.sex %></p></div>
