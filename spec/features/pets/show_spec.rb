@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'Pet' do
   it 'as a visitor, I see a single pets information' do
     lucy = create(:pet, name: 'Lucy')
-
     visit(pet_path(lucy))
 
     expect(page).to have_content(lucy.name)
