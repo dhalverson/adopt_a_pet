@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
   it 'I see a box to search for pets by breed on the pets index page' do
-    visit(root_path)
+    visit(pets_path)
     
     expect(page).to have_link('Search')
   end
